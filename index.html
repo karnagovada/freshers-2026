@@ -5,21 +5,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Freshers Party 2026 – You're Invited</title>
-    <meta property="og:title" content="You're invited – Freshers Party 2026">
+    <meta property="og:title" content="You are warmly invited – Freshers Party 2026">
     <meta property="og:description"
-        content="Dadi Veeru Naidu Degree College · Computer Science Group. Open your personal invitation.">
+        content="Dadi Veeru Naidu Degree College · Computer Science Group. Open your invitation.">
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,500&family=Nunito:wght@400;600;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
     <style>
         :root {
-            --sky: #cfe6f5;
-            --ivory: #fffaf0;
-            --cream: #fbf3e2;
+            --bg: #06101e;
+            --navy: #0b1c33;
+            --teal: #0f4c5c;
+            --teal2: #2fa6a0;
+            --blue: #4aa3e8;
+            --white: #eef3f8;
+            --dim: #9fb2c6;
             --gold: #d9b25a;
-            --ink: #3d4f73;
-            --blue: #4f7fb0;
-            color-scheme: light;
+            color-scheme: dark;
             box-sizing: border-box;
             padding-top: env(safe-area-inset-top, 0px);
             padding-bottom: env(safe-area-inset-bottom, 0px)
@@ -39,9 +41,9 @@
         body {
             margin: 0;
             min-height: 100%;
-            background: #eaf4fa;
-            color: var(--ink);
-            font-family: 'Nunito', system-ui, sans-serif
+            background: var(--bg);
+            color: var(--white);
+            font-family: 'DM Sans', system-ui, sans-serif
         }
 
         body.lock {
@@ -53,40 +55,8 @@
             display: none !important
         }
 
-        .bl {
-            position: fixed;
-            bottom: -70px;
-            width: 34px;
-            height: 44px;
-            border-radius: 50% 50% 48% 48%;
-            opacity: .8;
-            animation: float linear infinite;
-            pointer-events: none;
-            z-index: 1
-        }
-
-        .bl::after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            top: 100%;
-            width: 1px;
-            height: 46px;
-            background: rgba(90, 80, 60, .3)
-        }
-
-        @keyframes float {
-            0% {
-                transform: translate(0, 0) rotate(-4deg)
-            }
-
-            50% {
-                transform: translate(14px, -60vh) rotate(5deg)
-            }
-
-            100% {
-                transform: translate(-8px, -125vh) rotate(-3deg)
-            }
+        .mono {
+            font-family: 'JetBrains Mono', ui-monospace, monospace
         }
 
         /* welcome */
@@ -96,37 +66,29 @@
             min-height: 100vh;
             min-height: 100dvh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 60px 26px 40px;
+            padding: 28px 18px;
             overflow: hidden;
-            background: radial-gradient(circle at 15% 8%, rgba(253, 240, 184, .95), transparent 40%), radial-gradient(circle at 90% 35%, rgba(251, 220, 196, .85), transparent 42%), linear-gradient(180deg, #cfe6f5, #f6f1e0 60%, #dcecc9);
-            transition: opacity .9s, transform .9s, filter .9s
+            background: radial-gradient(circle at 80% 0, rgba(47, 166, 160, .28), transparent 45%), radial-gradient(circle at 10% 100%, rgba(74, 163, 232, .18), transparent 45%), linear-gradient(180deg, #071426, #06101e);
+            transition: opacity .8s, transform .8s, filter .8s
         }
 
         #wel.out {
             opacity: 0;
-            transform: scale(1.05);
+            transform: scale(1.04);
             filter: blur(6px);
             pointer-events: none
         }
 
-        .bunt {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: auto;
-            animation: swing 5s ease-in-out infinite alternate;
-            transform-origin: 50% 0
-        }
-
-        @keyframes swing {
-            to {
-                transform: rotate(.5deg)
-            }
+        .panel {
+            width: min(380px, 100%);
+            text-align: center;
+            padding: 34px 24px 28px;
+            border-radius: 24px;
+            background: linear-gradient(170deg, rgba(18, 44, 70, .85), rgba(9, 24, 42, .9));
+            border: 1px solid rgba(120, 170, 210, .25);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, .5), inset 0 1px 0 rgba(255, 255, 255, .06)
         }
 
         .rise {
@@ -143,92 +105,121 @@
         }
 
         .eb {
-            font-weight: 800;
-            font-size: clamp(11px, 3.2vw, 14px);
-            letter-spacing: .38em;
-            color: #a8802b;
+            font-weight: 700;
+            font-size: 11.5px;
+            letter-spacing: .4em;
+            color: var(--gold);
             margin: 0 0 8px
         }
 
-        #wel h1 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 800;
-            font-size: clamp(40px, 12.5vw, 66px);
-            line-height: 1.04;
-            margin: 0 0 14px;
-            color: var(--ink)
+        .panel h1 {
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+            font-size: clamp(34px, 10.5vw, 46px);
+            line-height: 1.05;
+            margin: 0 0 12px
         }
 
         .gt {
-            background: linear-gradient(100deg, #946d1c, #c79a38 45%, #dcb455 60%, #946d1c);
-            background-size: 200% 100%;
+            background: linear-gradient(100deg, #c9a24a, #f0dca4 50%, #c9a24a);
             -webkit-background-clip: text;
             background-clip: text;
-            color: transparent;
-            animation: shine 7s linear infinite
+            color: transparent
         }
 
-        @keyframes shine {
-            to {
-                background-position: -200% 0
-            }
-        }
-
-        #wel h2 {
-            font-weight: 800;
-            font-size: clamp(11px, 3.3vw, 14px);
-            letter-spacing: .2em;
-            margin: 0 0 12px;
-            color: var(--ink)
+        .panel h2 {
+            font-weight: 700;
+            font-size: 11.5px;
+            letter-spacing: .18em;
+            margin: 0 0 10px;
+            color: var(--white)
         }
 
         .tg {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Fraunces', serif;
             font-style: italic;
-            font-size: clamp(15px, 4.4vw, 18px);
-            color: #5d6c8e;
-            margin: 0 0 30px
+            font-weight: 500;
+            font-size: 16px;
+            color: var(--dim);
+            margin: 0 0 22px
+        }
+
+        .lab {
+            display: block;
+            font-weight: 700;
+            font-size: 10.5px;
+            letter-spacing: .3em;
+            color: var(--teal2);
+            margin: 0 0 7px;
+            text-align: left;
+            padding-left: 6px
         }
 
         .fld {
-            width: min(320px, 100%);
-            margin: 0 auto 18px;
-            text-align: left
-        }
-
-        .fld label {
-            display: block;
-            font-weight: 800;
-            font-size: 11px;
-            letter-spacing: .3em;
-            color: #a8802b;
-            margin: 0 0 8px 6px
+            margin: 0 0 14px
         }
 
         .fld input {
             width: 100%;
-            font: 600 18px 'Nunito', sans-serif;
-            color: var(--ink);
-            background: rgba(255, 255, 255, .85);
-            border: 1.5px solid var(--gold);
-            border-radius: 999px;
-            padding: 15px 22px;
+            font: 500 17px 'DM Sans', sans-serif;
+            color: var(--white);
+            background: rgba(4, 12, 24, .7);
+            border: 1.5px solid rgba(120, 170, 210, .3);
+            border-radius: 14px;
+            padding: 13px 16px;
             outline: none;
-            box-shadow: 0 6px 18px rgba(120, 130, 150, .15);
-            transition: box-shadow .3s, transform .3s
+            transition: border-color .3s, box-shadow .3s
         }
 
         .fld input::placeholder {
-            color: #a3adc4;
-            font-weight: 400
+            color: #5f7690
         }
 
         .fld input:focus {
-            box-shadow: 0 0 0 4px rgba(217, 178, 90, .3), 0 6px 18px rgba(120, 130, 150, .15)
+            border-color: var(--blue);
+            box-shadow: 0 0 0 4px rgba(74, 163, 232, .2)
         }
 
-        .fld.err input {
-            animation: shake .45s;
+        .seg {
+            display: flex;
+            gap: 10px;
+            margin: 0 0 20px
+        }
+
+        .seg input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none
+        }
+
+        .seg label {
+            flex: 1;
+            padding: 12px 0;
+            border-radius: 14px;
+            border: 1.5px solid rgba(120, 170, 210, .3);
+            background: rgba(4, 12, 24, .7);
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: .24em;
+            cursor: pointer;
+            transition: .25s;
+            text-align: center;
+            color: var(--dim)
+        }
+
+        .seg input:checked+label {
+            background: linear-gradient(135deg, #1c6fae, #4aa3e8);
+            border-color: #4aa3e8;
+            color: #fff;
+            box-shadow: 0 6px 16px rgba(74, 163, 232, .3)
+        }
+
+        .err {
+            animation: shake .45s
+        }
+
+        .err label,
+        .err input {
             border-color: #e08a7a
         }
 
@@ -247,90 +238,397 @@
         }
 
         .btn {
-            font: 800 14px 'Nunito', sans-serif;
-            letter-spacing: .22em;
-            color: #5b4a1c;
-            background: linear-gradient(135deg, #f8ebb8, #e3bf6c);
+            width: 100%;
+            font: 700 14px 'DM Sans', sans-serif;
+            letter-spacing: .24em;
+            color: #fff;
+            background: linear-gradient(135deg, #1c6fae, #2fa6a0);
             border: 0;
-            border-radius: 999px;
-            padding: 16px 36px;
+            border-radius: 14px;
+            padding: 16px;
             cursor: pointer;
-            box-shadow: 0 5px 0 #b99443, 0 10px 24px rgba(200, 160, 70, .3)
+            box-shadow: 0 5px 0 #0c3f55, 0 12px 26px rgba(47, 166, 160, .25)
         }
 
         .btn:active {
             transform: translateY(3px)
         }
 
-        /* scene (photo or fallback) */
-        .ph {
-            position: relative;
-            overflow: hidden;
-            background: #cfe6f5
+        /* film */
+        #film {
+            position: fixed;
+            inset: 0;
+            z-index: 20;
+            background: #06101e;
+            transition: opacity .8s
         }
 
-        .ph>img,
-        .ph>svg {
+        #film.fade {
+            opacity: 0
+        }
+
+        #lab {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
             display: block;
-            object-fit: cover;
-            animation: kb 16s ease-out both
+            transition: opacity .7s
         }
 
-        @keyframes kb {
+        #lab.off {
+            opacity: 0
+        }
+
+        #cam {
+            transform-origin: 200px 436.5px
+        }
+
+        .tw {
+            animation: tw 2.4s ease-in-out infinite alternate
+        }
+
+        @keyframes tw {
             from {
-                transform: scale(1.14)
+                opacity: .35
             }
 
             to {
-                transform: scale(1)
+                opacity: 1
             }
         }
 
-        .ph::after {
+        .lapw {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: min(86vw, 540px);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity .6s
+        }
+
+        .lapw.on {
+            opacity: 1
+        }
+
+        .lid {
+            background: linear-gradient(160deg, #141c28, #0a1018);
+            border-radius: 2.4% 2.4% .8% .8%/3.6% 3.6% 1.4% 1.4%;
+            padding: 3.1% 3.85%;
+            box-shadow: 0 0 0 1px #243246, 0 30px 60px rgba(0, 0, 0, .6)
+        }
+
+        .scr {
+            position: relative;
+            aspect-ratio: 16/10;
+            container-type: inline-size;
+            background: #02060c;
+            border-radius: .6cqw;
+            overflow: hidden
+        }
+
+        .base {
+            margin: 0 -4%;
+            height: 0;
+            padding-bottom: 3.4%;
+            background: linear-gradient(#9aa7b6, #5d6b7b);
+            border-radius: 0 0 3% 3%/0 0 60% 60%;
+            position: relative;
+            box-shadow: 0 14px 30px rgba(0, 0, 0, .5)
+        }
+
+        .base::after {
             content: "";
             position: absolute;
+            left: 41%;
+            right: 41%;
+            top: 0;
+            height: 30%;
+            background: #47545f;
+            border-radius: 0 0 40% 40%
+        }
+
+        .sleep {
+            position: absolute;
             inset: 0;
-            background: linear-gradient(rgba(255, 255, 255, .1), rgba(255, 248, 230, .22));
+            background: linear-gradient(125deg, rgba(255, 255, 255, .05), transparent 40%)
+        }
+
+        .layer {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity .6s
+        }
+
+        .layer.on {
+            opacity: 1
+        }
+
+        .boot {
+            background: #02060c;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center
+        }
+
+        .boot b {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            font-size: 7cqw;
+            letter-spacing: 1.4cqw;
+            color: var(--white);
+            margin-left: 1.4cqw
+        }
+
+        .boot small {
+            font-size: 1.9cqw;
+            letter-spacing: .5cqw;
+            color: var(--dim);
+            margin: 1.2cqw 0 4cqw
+        }
+
+        .bar {
+            width: 30cqw;
+            height: .7cqw;
+            background: rgba(255, 255, 255, .12);
+            border-radius: 1cqw;
+            overflow: hidden
+        }
+
+        .bar i {
+            display: block;
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, var(--teal2), var(--blue));
+            border-radius: 1cqw
+        }
+
+        .boot.on .bar i {
+            animation: ld 1.3s .15s ease-out forwards
+        }
+
+        @keyframes ld {
+            to {
+                width: 100%
+            }
+        }
+
+        .desk {
+            background: radial-gradient(circle at 70% 20%, rgba(47, 166, 160, .35), transparent 55%), linear-gradient(135deg, #0a2540, #0f4c5c 70%, #0b1c33)
+        }
+
+        .win {
+            position: absolute;
+            background: rgba(7, 18, 32, .94);
+            border: .2cqw solid rgba(120, 170, 210, .28);
+            border-radius: 1.4cqw;
+            box-shadow: 0 1.5cqw 4cqw rgba(0, 0, 0, .45);
+            overflow: hidden
+        }
+
+        .win .tb {
+            height: 4.2cqw;
+            background: rgba(255, 255, 255, .05);
+            display: flex;
+            align-items: center;
+            gap: 1cqw;
+            padding: 0 1.6cqw;
+            font: 400 1.9cqw 'JetBrains Mono', monospace;
+            color: var(--dim)
+        }
+
+        .win .tb i {
+            width: 1.3cqw;
+            height: 1.3cqw;
+            border-radius: 50%;
+            background: #46607a
+        }
+
+        .win .tb i:first-child {
+            background: #e08a7a
+        }
+
+        .win .tb i:nth-child(2) {
+            background: #d9b25a
+        }
+
+        .win .tb i:nth-child(3) {
+            background: #5fbf9f
+        }
+
+        .ed {
+            left: 4cqw;
+            top: 4cqw;
+            width: 62cqw;
+            height: 36cqw
+        }
+
+        .tm {
+            left: 4cqw;
+            bottom: 4cqw;
+            width: 92cqw;
+            height: 19cqw
+        }
+
+        .code {
+            padding: 1.8cqw 2.4cqw;
+            font: 400 2.4cqw/1.55 'JetBrains Mono', monospace;
+            color: #cfdbe8
+        }
+
+        .code div {
+            white-space: pre
+        }
+
+        .code div {
+            opacity: 0
+        }
+
+        .desk.on .code div {
+            animation: ln .5s calc(var(--i)*.14s + .2s) forwards
+        }
+
+        @keyframes ln {
+            to {
+                opacity: 1
+            }
+        }
+
+        .k {
+            color: #4aa3e8
+        }
+
+        .s {
+            color: #2fa6a0
+        }
+
+        .f {
+            color: #f0dca4
+        }
+
+        .c {
+            color: #6f879f
+        }
+
+        .tm .code {
+            font-size: 2.5cqw;
+            padding-top: 1.4cqw
+        }
+
+        .tm .code div {
+            opacity: 1;
+            animation: none !important
+        }
+
+        .caret {
+            display: inline-block;
+            width: 1.2cqw;
+            height: 2.4cqw;
+            background: var(--teal2);
+            vertical-align: -.4cqw;
+            animation: bl 1s steps(1) infinite
+        }
+
+        @keyframes bl {
+            50% {
+                opacity: 0
+            }
+        }
+
+        .mini {
+            position: absolute;
+            inset: 6cqw 12cqw;
+            border-radius: 2cqw;
+            background: linear-gradient(160deg, #0f2d47, #091829);
+            border: .25cqw solid rgba(217, 178, 90, .7);
+            box-shadow: 0 0 6cqw rgba(74, 163, 232, .25);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            opacity: 0;
+            transform: scale(.9);
+            transition: opacity .8s, transform .8s;
+            padding: 0 3cqw
+        }
+
+        .mini.on {
+            opacity: 1;
+            transform: none
+        }
+
+        .mini small {
+            font-weight: 700;
+            font-size: 2cqw;
+            letter-spacing: .9cqw;
+            color: var(--gold)
+        }
+
+        .mini .nm {
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+            font-size: 6.6cqw;
+            line-height: 1.1;
+            margin: 1.2cqw 0;
+            max-width: 100%;
+            overflow-wrap: anywhere
+        }
+
+        .mini .iv {
+            font-size: 2.4cqw;
+            color: var(--dim);
+            margin-bottom: 1cqw
+        }
+
+        .mini .fp {
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+            font-size: 5.4cqw;
+            letter-spacing: .4cqw
+        }
+
+        .mini .cs {
+            font-size: 2cqw;
+            letter-spacing: .7cqw;
+            color: var(--teal2);
+            margin-top: 1.2cqw;
+            font-weight: 700
+        }
+
+        .shade {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 35%, transparent, rgba(0, 0, 0, .55));
             pointer-events: none
         }
 
-        .fb {
-            animation: fl 6s ease-in-out infinite alternate;
-            transform-box: fill-box;
-            transform-origin: 50% 100%
+        #cap {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: calc(5vh + env(safe-area-inset-bottom, 0px));
+            z-index: 40;
+            text-align: center;
+            padding: 0 24px;
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-size: clamp(15px, 4.2vw, 18px);
+            color: var(--white);
+            text-shadow: 0 2px 14px rgba(0, 0, 0, .8);
+            opacity: 0;
+            transition: opacity 1s;
+            pointer-events: none
         }
 
-        @keyframes fl {
-            from {
-                transform: translate(0, 0) rotate(-3deg)
-            }
-
-            to {
-                transform: translate(6px, -16px) rotate(3deg)
-            }
+        #cap.on {
+            opacity: .95
         }
 
-        .bal {
-            transform-box: fill-box;
-            transform-origin: 50% 100%;
-            animation: fl 4.5s ease-in-out infinite alternate
-        }
-
-        .cloud {
-            animation: cl 50s linear infinite alternate
-        }
-
-        @keyframes cl {
-            to {
-                transform: translateX(70px)
-            }
-        }
-
-        /* invitation */
+        /* final invitation */
         #inv {
             position: relative;
             z-index: 3;
@@ -339,83 +637,31 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 28px 16px 56px
-        }
-
-        #bg {
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            opacity: 0;
-            transition: opacity 1.4s
-        }
-
-        #bg.on {
-            opacity: 1
-        }
-
-        #bg.soft {
-            filter: blur(2.5px) brightness(1.04)
-        }
-
-        .cap {
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: calc(14vh + env(safe-area-inset-bottom, 0px));
-            z-index: 4;
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-weight: 800;
-            font-size: clamp(34px, 10vw, 52px);
-            color: #fff;
-            text-shadow: 0 2px 18px rgba(40, 60, 100, .55);
-            opacity: 0;
-            transform: translateY(14px);
-            transition: opacity 1.2s, transform 1.2s;
-            padding: 0 20px
-        }
-
-        .cap small {
-            display: block;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 800;
-            font-size: 12px;
-            letter-spacing: .3em;
-            margin-top: 8px
-        }
-
-        .cap.on {
-            opacity: 1;
-            transform: none
-        }
-
-        .cap.off {
-            opacity: 0;
-            transition: opacity .8s
+            padding: 26px 16px 56px;
+            background: radial-gradient(circle at 85% 0, rgba(47, 166, 160, .3), transparent 45%), radial-gradient(circle at 5% 80%, rgba(74, 163, 232, .18), transparent 45%), linear-gradient(180deg, #071426, #06101e)
         }
 
         .card {
             position: relative;
             width: min(440px, 100%);
             margin: auto 0;
-            background: linear-gradient(170deg, rgba(255, 253, 247, .96), rgba(251, 243, 226, .96));
             text-align: center;
-            padding: 0 24px 34px;
-            border-radius: 18px;
-            overflow: hidden;
+            padding: 28px 22px 32px;
+            border-radius: 26px;
             opacity: 0;
-            box-shadow: 0 0 0 1px var(--gold), 0 0 0 6px var(--ivory), 0 0 0 7px var(--gold), 0 24px 60px rgba(70, 90, 130, .35)
+            background: linear-gradient(170deg, rgba(18, 44, 70, .92), rgba(9, 24, 42, .95));
+            border: 1px solid rgba(120, 170, 210, .25);
+            box-shadow: 0 0 0 1px rgba(217, 178, 90, .35), 0 30px 70px rgba(0, 0, 0, .55), 0 0 80px rgba(47, 166, 160, .15)
         }
 
         .card.on {
-            animation: rise 1.5s cubic-bezier(.2, .8, .2, 1) both
+            animation: rise 1.2s cubic-bezier(.2, .8, .2, 1) both
         }
 
         @keyframes rise {
             from {
                 opacity: 0;
-                transform: translateY(60px) scale(.94)
+                transform: scale(1.06)
             }
 
             to {
@@ -433,37 +679,42 @@
             animation: up 1.1s var(--d) ease forwards
         }
 
-        .flags {
-            width: calc(100% + 48px);
-            margin: 0 -24px;
-            display: block
+        .tag0 {
+            font-size: 12px;
+            color: var(--teal2);
+            margin: 0 0 14px;
+            letter-spacing: .06em
         }
 
-        .dear {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-weight: 600;
-            font-size: clamp(26px, 8vw, 34px);
-            color: var(--blue);
-            margin: 14px 0 4px;
+        .resp {
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: .4em;
+            color: var(--gold);
+            margin: 0 0 6px
+        }
+
+        .who {
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+            font-size: clamp(30px, 9vw, 40px);
+            line-height: 1.1;
+            margin: 0 0 6px;
             overflow-wrap: anywhere
         }
 
-        .cord {
-            font-weight: 800;
-            font-size: 12px;
-            letter-spacing: .32em;
-            color: #a8802b;
-            margin: 0 0 8px
+        .sub {
+            font-size: 15px;
+            color: var(--dim);
+            margin: 0 0 14px
         }
 
         .card h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 800;
-            font-size: clamp(32px, 10vw, 46px);
-            line-height: 1.06;
-            margin: 0 0 8px;
-            color: var(--ink)
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+            font-size: clamp(33px, 10.4vw, 46px);
+            line-height: 1.05;
+            margin: 0 0 8px
         }
 
         .card h3 span {
@@ -471,197 +722,493 @@
         }
 
         .coll {
-            font-weight: 800;
-            font-size: 12px;
-            letter-spacing: .22em;
+            font-weight: 700;
+            font-size: 11.5px;
+            letter-spacing: .18em;
             color: var(--blue);
-            margin: 0 0 6px
+            margin: 0 0 4px
         }
 
-        .tag {
-            font-family: 'Playfair Display', serif;
+        .tgl {
+            font-family: 'Fraunces', serif;
             font-style: italic;
-            font-size: 16px;
-            color: #6a7899;
-            margin: 0 0 14px
+            font-weight: 500;
+            font-size: 15.5px;
+            color: var(--dim);
+            margin: 0 0 18px
         }
 
-        .pband {
-            height: 170px;
-            margin: 0 -24px 16px;
-            -webkit-mask-image: linear-gradient(transparent, #000 14%, #000 82%, transparent);
-            mask-image: linear-gradient(transparent, #000 14%, #000 82%, transparent)
+        .tiles {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 0 0 20px;
+            text-align: left
         }
 
-        .det {
-            margin: 4px 0 20px;
-            text-align: left;
-            border-radius: 12px;
-            background: #fdf3c9;
-            padding: 6px 16px;
-            border-left: 4px solid #8fb8e0
+        .tile {
+            border-radius: 16px;
+            padding: 12px 14px;
+            background: rgba(15, 76, 92, .45);
+            border: 1px solid rgba(47, 166, 160, .35)
         }
 
-        .dr {
-            padding: 11px 0;
-            border-bottom: 1px dashed rgba(217, 178, 90, .8)
+        .tile:nth-child(3) {
+            grid-column: 1/3
         }
 
-        .dr:last-child {
-            border: 0
-        }
-
-        .dr small {
+        .tile small {
             display: block;
-            font-weight: 800;
-            font-size: 10.5px;
+            font-weight: 700;
+            font-size: 10px;
             letter-spacing: .3em;
-            color: #a8802b
+            color: var(--teal2);
+            margin-bottom: 3px
         }
 
-        .dr b {
-            font-family: 'Playfair Display', serif;
-            font-weight: 800;
-            font-size: 21px;
-            color: var(--ink)
+        .tile b {
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+            font-size: 19px;
+            line-height: 1.25;
+            color: var(--white)
         }
 
         .msg {
-            font-family: 'Playfair Display', serif;
+            font-size: 15.5px;
+            line-height: 1.7;
+            color: #c4d2e0;
+            margin: 0 4px 16px
+        }
+
+        .bless {
+            font-family: 'Fraunces', serif;
             font-style: italic;
-            font-size: 17px;
-            line-height: 1.6;
-            color: #4a5a7c;
-            margin: 0 6px 18px
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1.5;
+            margin: 0 8px 18px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(217, 178, 90, .45);
+            color: var(--white)
         }
 
         .grp {
             display: inline-block;
             padding: 10px 22px;
             border-radius: 999px;
-            background: linear-gradient(160deg, #dcecf8, #fbe6d4);
-            font-weight: 800;
-            letter-spacing: .22em;
-            font-size: 13px;
-            color: var(--ink);
+            border: 1.5px solid var(--teal2);
+            color: var(--teal2);
+            font-weight: 700;
+            letter-spacing: .24em;
+            font-size: 12.5px;
             margin: 0 0 18px
         }
 
         .reg {
-            font-size: 13px;
+            font-size: 12.5px;
             letter-spacing: .12em;
-            color: #8a7430;
+            color: var(--dim);
             margin: 0 0 4px
         }
 
         .reg2 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 800;
-            font-size: 19px;
-            color: var(--ink);
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+            font-size: 18px;
             margin: 0;
             line-height: 1.4
+        }
+
+        .wbg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: .5;
+            filter: blur(1.6px) saturate(.9)
+        }
+
+        .wgrid {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(74, 163, 232, .07) 1px, transparent 1px), linear-gradient(90deg, rgba(74, 163, 232, .07) 1px, transparent 1px);
+            background-size: 26px 26px;
+            -webkit-mask-image: radial-gradient(circle at 50% 45%, #000, transparent 75%);
+            mask-image: radial-gradient(circle at 50% 45%, #000, transparent 75%)
+        }
+
+        #wel::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 45%, rgba(6, 16, 30, .2), rgba(6, 16, 30, .78));
+            pointer-events: none
+        }
+
+        .panel {
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(170deg, rgba(18, 44, 70, .8), rgba(9, 24, 42, .86));
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px)
+        }
+
+        .circ {
+            position: absolute;
+            width: 110px;
+            height: 110px;
+            opacity: .55;
+            pointer-events: none;
+            z-index: 1
+        }
+
+        .cA {
+            top: 10px;
+            right: 10px
+        }
+
+        .cB {
+            bottom: 10px;
+            left: 10px;
+            transform: rotate(180deg)
+        }
+
+        .tab {
+            margin-left: 1.2cqw;
+            padding: .4cqw .9cqw;
+            border-radius: .8cqw;
+            opacity: .5
+        }
+
+        .tab.on {
+            opacity: 1;
+            background: rgba(74, 163, 232, .22);
+            color: #fff
+        }
+
+        .win .tb {
+            font-size: 1.55cqw
+        }
+
+        .desk.on .ed .code div {
+            animation: ln .25s calc(var(--i)*.06s) forwards
+        }
+
+        .card {
+            overflow: hidden
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(74, 163, 232, .045) 1px, transparent 1px), linear-gradient(90deg, rgba(74, 163, 232, .045) 1px, transparent 1px);
+            background-size: 22px 22px;
+            pointer-events: none
+        }
+
+        .card>* {
+            position: relative
+        }
+
+        .card>.circ {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            opacity: .5
+        }
+
+        .k1 {
+            top: 6px;
+            right: 6px
+        }
+
+        .k2 {
+            bottom: 6px;
+            left: 6px;
+            transform: rotate(180deg)
+        }
+
+        .top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 0 0 14px
+        }
+
+        .top svg {
+            width: 34px
+        }
+
+        .top span {
+            font-size: 12px;
+            color: var(--teal2);
+            letter-spacing: .06em
+        }
+
+        .who {
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+            font-size: clamp(30px, 9vw, 40px);
+            line-height: 1.1;
+            margin: 0 0 6px;
+            overflow-wrap: anywhere
+        }
+
+        .vis {
+            height: 170px;
+            margin: 0 -22px 18px;
+            -webkit-mask-image: linear-gradient(transparent, #000 16%, #000 84%, transparent);
+            mask-image: linear-gradient(transparent, #000 16%, #000 84%, transparent);
+            overflow: hidden
+        }
+
+        .vis svg,
+        .vis img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover
+        }
+
+        .msg {
+            margin-bottom: 18px
+        }
+
+        .resp {
+            letter-spacing: .26em !important;
+            font-size: 11.5px !important
+        }
+
+        .msg {
+            font-size: 15px;
+            margin: 0 0 18px
+        }
+
+        .wbg {
+            opacity: .85;
+            filter: blur(1px)
+        }
+
+        #wel::after {
+            background: radial-gradient(circle at 50% 48%, rgba(6, 16, 30, .1), rgba(6, 16, 30, .6))
         }
     </style>
 </head>
 
-<body class="lock">
+<body>
     <svg width="0" height="0" style="position:absolute" aria-hidden="true">
         <defs>
-            <linearGradient id="fsk" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#cfe6f5" />
-                <stop offset=".6" stop-color="#eef3ee" />
-                <stop offset="1" stop-color="#fbe3cb" />
+            <linearGradient id="bgG" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#06101e" />
+                <stop offset=".55" stop-color="#091d2b" />
+                <stop offset="1" stop-color="#0a2a36" />
             </linearGradient>
-            <linearGradient id="fgr" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#d7ebc6" />
-                <stop offset="1" stop-color="#bfdcae" />
+            <linearGradient id="flG" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#0b2230" />
+                <stop offset="1" stop-color="#050d17" />
             </linearGradient>
-            <radialGradient id="fsn">
-                <stop offset="0" stop-color="#fff6cf" stop-opacity=".95" />
-                <stop offset="1" stop-color="#fff6cf" stop-opacity="0" />
+            <radialGradient id="gl">
+                <stop offset="0" stop-color="#4fd0c8" stop-opacity=".5" />
+                <stop offset="1" stop-color="#4fd0c8" stop-opacity="0" />
             </radialGradient>
+            <radialGradient id="cl">
+                <stop offset="0" stop-color="#cfe9f2" stop-opacity=".55" />
+                <stop offset="1" stop-color="#cfe9f2" stop-opacity="0" />
+            </radialGradient>
+            <linearGradient id="wnG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#2b5f84" />
+                <stop offset="1" stop-color="#143349" />
+            </linearGradient>
+            <linearGradient id="lidG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#1b2533" />
+                <stop offset="1" stop-color="#090e16" />
+            </linearGradient>
+            <linearGradient id="bsG" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#a9b5c3" />
+                <stop offset="1" stop-color="#5f6d7d" />
+            </linearGradient>
+
+            <g id="ckt" fill="none" stroke="#2fa6a0" stroke-width="1">
+                <path d="M0 18H38L54 34V74" />
+                <path d="M0 48H24L40 64V120" />
+                <path d="M62 0V24L82 44H120" />
+                <path d="M96 0V12L108 24V58" />
+                <circle cx="54" cy="78" r="3" fill="#d9b25a" stroke="none" />
+                <circle cx="40" cy="123" r="0" />
+                <circle cx="116" cy="44" r="2.5" fill="#d9b25a" stroke="none" />
+                <circle cx="108" cy="62" r="2.5" fill="#4aa3e8" stroke="none" />
+            </g>
         </defs>
     </svg>
-
     <main id="wel">
-        <svg class="bunt" id="b0" viewBox="0 0 400 44" aria-hidden="true"></svg>
-        <p class="eb rise" style="--d:.2s">WELCOME TO</p>
-        <h1 class="rise" style="--d:.5s">FRESHERS<br><span class="gt">PARTY 2026</span></h1>
-        <h2 class="rise" style="--d:.8s">DADI VEERU NAIDU DEGREE COLLEGE</h2>
-        <p class="tg rise" style="--d:1.1s">“New Faces. New Friends. New Memories.”</p>
-        <div class="fld rise" id="fld" style="--d:1.5s"><label for="nm">ENTER YOUR NAME</label><input id="nm"
-                type="text" maxlength="24" placeholder="Your name" autocomplete="given-name" autocapitalize="words"
-                enterkeyhint="go"></div>
-        <button class="btn rise" style="--d:1.8s" id="go">OPEN INVITATION</button>
+        <svg id="wlab" class="wbg" viewBox="0 0 400 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+        <div class="wgrid"></div>
+        <svg class="circ cA" viewBox="0 0 120 120" aria-hidden="true">
+            <use href="#ckt" />
+        </svg><svg class="circ cB" viewBox="0 0 120 120" aria-hidden="true">
+            <use href="#ckt" />
+        </svg>
+        <section class="panel">
+            <p class="eb rise" style="--d:.2s">WELCOME TO</p>
+            <h1 class="rise" style="--d:.5s">FRESHERS<br><span class="gt">PARTY 2026</span></h1>
+            <h2 class="rise" style="--d:.8s">DADI VEERU NAIDU DEGREE COLLEGE</h2>
+            <p class="tg rise" style="--d:1.1s">“New Faces. New Friends. New Memories.”</p>
+            <div class="fld rise" id="fld" style="--d:1.5s"><label class="lab" for="nm">ENTER YOUR NAME</label><input
+                    id="nm" type="text" maxlength="24" placeholder="Your name" autocomplete="name"
+                    autocapitalize="words"></div>
+            <button class="btn rise" style="--d:1.9s" id="go">OPEN INVITATION</button>
+        </section>
     </main>
 
-    <div id="bg" class="ph hid" aria-hidden="true"></div>
-    <div class="cap" id="cap" aria-live="polite"></div>
+    <div id="film" class="hid" aria-hidden="true">
+        <svg id="lab" viewBox="0 0 400 600" preserveAspectRatio="xMidYMid meet">
+            <defs>
+                <filter id="dof" x="-10%" y="-10%" width="120%" height="120%">
+                    <feGaussianBlur stdDeviation="0">
+                        <animate id="dofA" attributeName="stdDeviation" begin="indefinite" dur="2.2s" fill="freeze"
+                            values="0;3.4" />
+                    </feGaussianBlur>
+                </filter>
+            </defs>
+            <g id="cam">
+                <g filter="url(#dof)">
+                    <rect x="-400" y="-400" width="1200" height="1400" fill="url(#bgG)" />
+                    <rect x="296" y="46" width="96" height="176" rx="3" fill="url(#wnG)" opacity=".7" />
+                    <g id="blinds" stroke="#0a1b28" stroke-width="2.2" opacity=".75"></g>
+                    <g fill="#cfe9f2" opacity=".6">
+                        <rect x="50" y="20" width="70" height="7" rx="3" />
+                        <rect x="165" y="20" width="70" height="7" rx="3" />
+                        <rect x="280" y="20" width="70" height="7" rx="3" />
+                    </g>
+                    <ellipse cx="85" cy="70" rx="80" ry="70" fill="url(#cl)" />
+                    <ellipse cx="200" cy="70" rx="80" ry="70" fill="url(#cl)" />
+                    <ellipse cx="315" cy="70" rx="80" ry="70" fill="url(#cl)" />
+                    <rect x="-400" y="232" width="1200" height="700" fill="url(#flG)" />
+                    <path d="M-400 232H800" stroke="#16384a" stroke-width="1.2" />
+                    <g id="seats"></g>
+                </g>
+                <g id="hero">
+                    <polygon points="40,486 360,486 400,560 0,560" fill="#0f1f2c" />
+                    <rect x="0" y="560" width="400" height="60" fill="#0b1823" />
+                    <ellipse cx="200" cy="440" rx="120" ry="60" fill="url(#gl)" opacity=".5" />
+                    <rect x="135" y="395" width="130" height="81" rx="5" fill="url(#lidG)" stroke="#2a384a"
+                        stroke-width=".8" />
+                    <rect x="140" y="399" width="120" height="75" fill="#02060c" />
+                    <polygon points="140,399 200,399 160,474 140,474" fill="#fff" opacity=".04" />
+                    <circle cx="200" cy="397" r="1" fill="#2a384a" />
+                    <path d="M120 476H280L284 486Q200 490 116 486Z" fill="url(#bsG)" />
+                    <rect x="184" y="476" width="32" height="3" rx="1.5" fill="#46535f" />
+                </g>
+            </g>
+        </svg>
+        <div class="lapw" id="lapw">
+            <div class="lid">
+                <div class="scr" id="scr">
+                    <div class="sleep"></div>
+                    <div class="layer boot" id="boot"><b>DVN</b><small>DADI VEERU NAIDU DEGREE COLLEGE</small>
+                        <div class="bar"><i></i></div>
+                    </div>
+                    <div class="layer desk" id="desk">
+                        <div class="win ed">
+                            <div class="tb"><i></i><i></i><i></i><span class="tab" id="tab0">invite.py</span><span
+                                    class="tab" id="tab1">Main.java</span><span class="tab"
+                                    id="tab2">index.html</span><span class="tab" id="tab3">style.css</span><span
+                                    class="tab" id="tab4">app.js</span></div>
+                            <div class="code" id="edc"></div>
+                        </div>
+                        <div class="win tm">
+                            <div class="tb"><i></i><i></i><i></i>&nbsp;terminal</div>
+                            <div class="code">
+                                <div><span class="s">$</span> python invite.py --guest "<span id="tyn"></span><span
+                                        class="caret"></span></div>
+                                <div id="tyo" class="c"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mini" id="mini"><small>YOU ARE CORDIALLY INVITED</small>
+                        <div class="nm" id="m2"></div>
+                        <div class="iv">to the Computer Science Group</div>
+                        <div class="fp">FRESHERS PARTY 2026</div>
+                        <div class="cs">DADI VEERU NAIDU DEGREE COLLEGE</div>
+                    </div>
+                    <div class="shade"></div>
+                </div>
+            </div>
+            <div class="base"></div>
+        </div>
+    </div>
+    <div id="cap" aria-live="polite"></div>
 
     <main id="inv" class="hid">
         <section class="card" id="card">
-            <svg class="flags" id="b1" viewBox="0 0 400 40" aria-hidden="true"></svg>
-            <p class="dear r" style="--d:.5s">Dear <span id="n1"></span>,</p>
-            <p class="cord r" style="--d:.9s">YOU ARE CORDIALLY INVITED</p>
+            <svg class="circ k1" viewBox="0 0 120 120" aria-hidden="true">
+                <use href="#ckt" />
+            </svg><svg class="circ k2" viewBox="0 0 120 120" aria-hidden="true">
+                <use href="#ckt" />
+            </svg>
+            <div class="top r" style="--d:.3s"><svg viewBox="0 0 36 24" aria-hidden="true">
+                    <path d="M6 2h24v15H6zM2 20h32l-3 3H5z" fill="none" stroke="#2fa6a0" stroke-width="1.4"
+                        stroke-linejoin="round" />
+                    <path d="M11 7l-3 3 3 3M25 7l3 3-3 3M20 6l-3 8" fill="none" stroke="#d9b25a" stroke-width="1.2"
+                        stroke-linecap="round" />
+                </svg><span class="mono">&lt;freshers-2026 /&gt;</span></div>
+            <p class="who r" style="--d:.6s">Dear <span id="who"></span>,</p>
+            <p class="resp r" style="--d:.9s">YOU ARE CORDIALLY INVITED</p>
             <h3 class="r" style="--d:1.2s">FRESHERS<span class="gt">PARTY 2026</span></h3>
-            <p class="coll r" style="--d:1.5s">DADI VEERU NAIDU DEGREE COLLEGE</p>
-            <p class="tag r" style="--d:1.7s">“New Faces. New Friends. New Memories.”</p>
-            <div class="pband ph r" id="pb" style="--d:2s"></div>
-            <div class="det r" style="--d:2.3s">
-                <div class="dr"><small>DATE</small><b id="v-date"></b></div>
-                <div class="dr"><small>TIME</small><b id="v-time"></b></div>
-                <div class="dr"><small>VENUE</small><b id="v-venue"></b></div>
+            <p class="coll r" style="--d:1.4s">DADI VEERU NAIDU DEGREE COLLEGE</p>
+            <p class="tgl r" style="--d:1.6s">“New Faces. New Friends. New Memories.”</p>
+            <div class="vis r" id="vis" style="--d:1.9s"></div>
+            <div class="tiles r" style="--d:2.2s">
+                <div class="tile"><small>DATE</small><b id="v-date"></b></div>
+                <div class="tile"><small>TIME</small><b id="v-time"></b></div>
+                <div class="tile"><small>VENUE</small><b id="v-venue"></b></div>
             </div>
-            <p class="msg r" style="--d:2.7s">Join us as we welcome new beginnings,<br>new friendships and unforgettable
+            <p class="msg r" style="--d:2.6s">Join us as we welcome new beginnings,<br>new friendships and unforgettable
                 college memories.</p>
-            <div class="grp r" style="--d:3s">COMPUTER SCIENCE GROUP</div>
-            <p class="reg r" style="--d:3.2s">With Warm Regards,</p>
-            <p class="reg2 r" style="--d:3.2s">Students of Computer Science</p>
+            <div class="grp r" style="--d:2.9s">COMPUTER SCIENCE GROUP</div>
+            <p class="reg r" style="--d:3.1s">With Warm Regards,</p>
+            <p class="reg2 r" style="--d:3.1s">Students of Computer Science</p>
         </section>
     </main>
 
     <script>
         // ===== EVENT DETAILS (edit here, or add ?date=...&time=...&venue=... to the link) =====
-        const DEF = { date: "Friday, 9 October 2026", time: "9:00 AM to 4:00 PM", venue: "Seminar Hall" };
+        const DEF = { date: "09/10/2026", time: "10:00", venue: "Seminar Hall" };
         // ======================================================================================
-        // To show a REAL photograph: put a file named photo.jpg (a real photo of your campus / freshers event)
-        // in the same folder as this index.html. It is used automatically. Without it, a soft campus scene is shown.
+        // REAL PHOTO: put a real photo of your Computer Science students/event named photo.jpg next to this file and it is used in the card.
         const $ = id => document.getElementById(id), q = new URLSearchParams(location.search), D = {};
         for (const k in DEF) { D[k] = q.get(k) || DEF[k]; $('v-' + k).textContent = D[k] }
-        const pal = ['#a9d0ec', '#f7e39a', '#f5c6b0', '#bfe0b4', '#f2bfc4', '#e6c46a'];
-        function flags(P0, P1, P2, n, fn) { let h = ''; for (let i = 1; i <= n; i++) { const t = i / (n + 1), a = (1 - t) * (1 - t), b = 2 * (1 - t) * t, c = t * t; h += fn(a * P0[0] + b * P1[0] + c * P2[0], a * P0[1] + b * P1[1] + c * P2[1], i) } return h }
-        const fl = (x, y, i) => `<polygon points="${x - 9},${y} ${x + 9},${y} ${x},${y + 18}" fill="${pal[i % 6]}"/>`, tri = (x, y, i) => `<polygon points="${x - 6},${y} ${x + 6},${y} ${x},${y + 13}" fill="${pal[i % 6]}"/>`;
-        const strip = '<path d="M0 6Q200 30 400 6" stroke="#cdbb90" fill="none"/>' + flags([0, 6], [200, 30], [400, 6], 16, fl);
-        $('b0').innerHTML = strip; $('b1').innerHTML = strip;
-        const bc = ['#f2aaa2', '#e8cf8a', '#a9d0ec', '#bfe0b4', '#f4cfc8', '#f7e39a'];
-        for (let i = 0; i < 8; i++) { const b = document.createElement('i'); b.className = 'bl'; b.style.cssText = `left:${(i * 13 + Math.random() * 6) % 94}%;background:radial-gradient(circle at 35% 30%,#fff9,${bc[i % 6]} 55%);animation-duration:${15 + Math.random() * 10}s;animation-delay:${-Math.random() * 20}s`; document.body.appendChild(b) }
-        // scene: real photo if photo.jpg exists, otherwise soft campus scene (no people)
-        const FALL = `<svg viewBox="0 0 400 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect x="-400" y="-700" width="1200" height="1040" fill="url(#fsk)"/><circle cx="330" cy="60" r="130" fill="url(#fsn)"/>
-<g class="cloud" fill="#fff" opacity=".85"><ellipse cx="90" cy="80" rx="46" ry="9"/><ellipse cx="120" cy="72" rx="28" ry="8"/><ellipse cx="270" cy="130" rx="40" ry="7"/></g>
-<rect x="-400" y="335" width="1200" height="700" fill="url(#fgr)"/>
-<rect x="110" y="190" width="190" height="150" fill="#fbf3e2"/><rect x="262" y="190" width="38" height="150" fill="#efe2c6" opacity=".6"/><rect x="102" y="180" width="206" height="12" fill="#b9d6ea"/><rect x="180" y="140" width="50" height="42" fill="#fbf3e2"/>
-<polygon points="174,140 205,114 236,140" fill="#f6ead0" stroke="#d9b25a" stroke-width="2"/><circle cx="205" cy="154" r="8" fill="#fffbe8" stroke="#d9b25a" stroke-width="1.5"/><path d="M205 148v6l4 2" stroke="#6a7aa0" stroke-width="1.3" fill="none"/>
-<g fill="#fff1b8" stroke="#e6d08a" stroke-width=".8"><rect x="122" y="240" width="14" height="30" rx="7"/><rect x="146" y="240" width="14" height="30" rx="7"/><rect x="250" y="240" width="14" height="30" rx="7"/><rect x="274" y="240" width="14" height="30" rx="7"/></g>
-<rect x="116" y="198" width="178" height="20" rx="3" fill="#fbe3cf" stroke="#d9b25a" stroke-width="1.4"/><text x="205" y="212" text-anchor="middle" font-family="Playfair Display,serif" font-weight="800" font-size="10" letter-spacing="2" fill="#6a7aa0">FRESHERS PARTY 2026</text>
-<path d="M183 340V294a22 22 0 0 1 44 0V340Z" fill="#fff4cf" stroke="#d9b25a" stroke-width="2"/>
-<g><circle cx="181" cy="296" r="4.5" fill="#f6c7c0"/><circle cx="186" cy="283" r="4.5" fill="#fff"/><circle cx="196" cy="274" r="4.5" fill="#f9e08a"/><circle cx="205" cy="271" r="4.5" fill="#f6c7c0"/><circle cx="214" cy="274" r="4.5" fill="#fff"/><circle cx="224" cy="283" r="4.5" fill="#f9e08a"/><circle cx="229" cy="296" r="4.5" fill="#f6c7c0"/></g>
-<g fill="#b4d8a0"><rect x="36" y="318" width="8" height="30" fill="#c2a98a"/><circle cx="40" cy="296" r="34"/><circle cx="62" cy="316" r="22"/><circle cx="18" cy="318" r="20" fill="#a2cd94"/><rect x="368" y="320" width="8" height="30" fill="#c2a98a"/><circle cx="372" cy="298" r="30"/><circle cx="352" cy="320" r="20" fill="#a2cd94"/></g>
-<g fill="#a9d2a0"><ellipse cx="120" cy="338" rx="16" ry="8"/><ellipse cx="290" cy="338" rx="16" ry="8"/></g>
-<rect x="6" y="334" width="100" height="7" fill="#e9d9b8"/><rect x="12" y="296" width="88" height="38" fill="#dcecf8" stroke="#d9b25a" stroke-width="1"/><text x="56" y="318" text-anchor="middle" font-family="Playfair Display,serif" font-weight="800" font-size="8" letter-spacing="1.5" fill="#8a9ac0">WELCOME</text>
-<path d="M40 262Q80 286 116 218" stroke="#b9a98f" fill="none"/><path d="M294 218Q340 290 384 266" stroke="#b9a98f" fill="none"/>${flags([40, 262], [80, 286], [116, 218], 6, tri)}${flags([294, 218], [340, 290], [384, 266], 6, tri)}
-<path d="M120 400L280 400 400 480H0Z" fill="#f6ead2" opacity=".6"/>
-<g class="bal"><path d="M266 322V400" stroke="#9a8a70" stroke-width=".8"/><ellipse cx="266" cy="310" rx="9" ry="11" fill="#a9d0ec"/><ellipse cx="256" cy="320" rx="9" ry="11" fill="#f7e39a"/><ellipse cx="277" cy="318" rx="9" ry="11" fill="#f6ecd6"/></g>
-<g class="bal" style="animation-delay:-2s"><path d="M350 322V400" stroke="#9a8a70" stroke-width=".8"/><ellipse cx="350" cy="310" rx="9" ry="11" fill="#f2b8b0"/><ellipse cx="360" cy="320" rx="9" ry="11" fill="#bfe0b4"/><ellipse cx="341" cy="318" rx="9" ry="11" fill="#e8cf8a"/></g>
-<g class="fb"><path d="M60 196V250" stroke="#b9a98f" stroke-width=".7"/><ellipse cx="60" cy="184" rx="9" ry="11" fill="#f5c6b0" opacity=".85"/></g><g class="fb" style="animation-delay:-3s"><path d="M345 160V215" stroke="#b9a98f" stroke-width=".7"/><ellipse cx="345" cy="148" rx="9" ry="11" fill="#a9d0ec" opacity=".85"/></g></svg>`;
-        let hasPhoto = false;
-        const probe = new Image(); probe.onload = () => { hasPhoto = true }; probe.src = 'photo.jpg';
-        function fillScene(el) { el.innerHTML = hasPhoto ? '<img src="photo.jpg" alt="Freshers Party at Dadi Veeru Naidu Degree College" decoding="async">' : FALL }
-        // name
+        document.head.appendChild(Object.assign(document.createElement('style'), { textContent: '.sw{transform-box:fill-box;transform-origin:50% 100%;animation:swy 4.5s ease-in-out infinite alternate}@keyframes swy{from{transform:rotate(-3deg)}to{transform:rotate(3deg)}}' }));
+        // ---- computer lab scene (drawn) ----
+        let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+        const cols = ['#4aa3e8', '#2fa6a0', '#cfdbe8', '#4aa3e8', '#2fa6a0', '#d9b25a'];
+        function seat(cx, cy, s, who) {
+            let h = `<ellipse cx="${cx}" cy="${cy - 24 * s}" rx="${46 * s}" ry="${34 * s}" fill="url(#gl)" opacity=".45"/>`;
+            h += `<rect x="${cx - 3 * s}" y="${cy - 5 * s}" width="${6 * s}" height="${8 * s}" fill="#1b2b3a"/><rect x="${cx - 33 * s}" y="${cy - 45 * s}" width="${66 * s}" height="${41 * s}" rx="${2 * s}" fill="#0a1824" stroke="#26435a" stroke-width="${.8 * s}"/><rect x="${cx - 30 * s}" y="${cy - 42 * s}" width="${60 * s}" height="${35 * s}" fill="#0c2535"/>`;
+            for (let i = 0; i < 7; i++) { const ind = (i % 3) * 5 * s; h += `<rect x="${cx - 27 * s + ind}" y="${cy - 39 * s + i * 4.6 * s}" width="${(10 + rnd() * 30) * s}" height="${1.6 * s}" rx="${.8 * s}" fill="${cols[(rnd() * 6) | 0]}" opacity=".7"/>` }
+            h += `<rect x="${cx - 52 * s}" y="${cy + 3 * s}" width="${104 * s}" height="${9 * s}" fill="#10202d"/><rect x="${cx - 22 * s}" y="${cy + 4.5 * s}" width="${44 * s}" height="${3 * s}" rx="${1 * s}" fill="#1f3040"/>`;
+            if (who) h += `<rect x="${cx - 22 * s}" y="${cy - 4 * s}" width="${44 * s}" height="${30 * s}" rx="${12 * s}" fill="#14263a" stroke="#2fa6a0" stroke-opacity=".35" stroke-width="${.7 * s}"/><circle cx="${cx}" cy="${cy - 12 * s}" r="${9.5 * s}" fill="#1a2f44" stroke="#2fa6a0" stroke-opacity=".35" stroke-width="${.7 * s}"/><path d="M${cx - 9.5 * s} ${cy - 13 * s}a${9.5 * s} ${9.5 * s} 0 0 1 ${19 * s} 0c-${3 * s}-${6 * s}-${16 * s}-${6 * s}-${19 * s} 0z" fill="#0a1522"/>`;
+            return h
+        }
+        $('seats').innerHTML = [[90, 252, .62, 1], [200, 252, .62, 0], [310, 252, .62, 1], [62, 350, .88, 1], [200, 350, .88, 1], [338, 350, .88, 0]].map(a => seat(...a)).join('');
+        $('blinds').innerHTML = Array.from({ length: 12 }, (_, i) => `<path d="M296 ${58 + i * 14}H392"/>`).join('');
+        $('wlab').innerHTML = document.querySelector('#lab g[filter]').innerHTML + $('hero').innerHTML; // same lab as the welcome-screen background
+        // ---- card visual: real photo if photo.jpg exists, otherwise a drawn lab/freshers scene ----
+        let hasPhoto = false; const pr = new Image(); pr.onload = () => { hasPhoto = true }; pr.src = 'photo.jpg';
+        const pcs = ['#2fa6a0', '#d9b25a', '#eef3f8', '#4aa3e8'];
+        function VIS() {
+            let l = ''; for (let i = 1; i <= 12; i++) { const t = i / 13, a = (1 - t) * (1 - t), b = 2 * (1 - t) * t, c = t * t; l += `<circle class="tw" style="animation-delay:${-i * .25}s" cx="${a * 40 + b * 200 + c * 360}" cy="${a * 30 + b * 62 + c * 30}" r="2" fill="#f0dca4"/>` }
+            const bal = (x, y, k0) => `<g class="sw"><path d="M${x} ${y + 8}V152" stroke="#6f879f" stroke-width=".6"/>` + [-8, 8, 0].map((dx, k) => `<ellipse cx="${x + dx}" cy="${y + [0, -2, -14][k]}" rx="8" ry="10" fill="${pcs[(k + k0) % 4]}" opacity=".9"/>`).join('') + '</g>';
+            return `<svg viewBox="0 0 400 190" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="190" fill="url(#bgG)"/><rect y="120" width="400" height="80" fill="url(#flG)"/><ellipse cx="200" cy="70" rx="190" ry="70" fill="url(#gl)" opacity=".35"/><path d="M40 30Q200 90 360 30" stroke="#6f879f" stroke-width=".8" fill="none"/>${l}<rect x="112" y="16" width="176" height="30" rx="4" fill="#0b2a3f" stroke="#d9b25a"/><text x="200" y="35" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="11.5" letter-spacing="2" fill="#f0dca4">FRESHERS PARTY 2026</text>${bal(40, 86, 0)}${bal(360, 86, 1)}${bal(74, 100, 2)}${bal(326, 100, 3)}${[[100, 122, .56, 1], [165, 122, .56, 0], [235, 122, .56, 1], [300, 122, .56, 0]].map(a => seat(...a)).join('')}</svg>`
+        }
+        function fillVis() { $('vis').innerHTML = hasPhoto ? '<img src="photo.jpg" alt="Computer Science students at the Freshers Party" decoding="async">' : VIS() }
+        // ---- name and voice ----
         const clean = s => s.replace(/[^\p{L}\p{M}\s.'-]/gu, '').replace(/\s+/g, ' ').trim().slice(0, 24).replace(/(^|[\s.'-])(\p{L})/gu, (m, a, b) => a + b.toUpperCase());
-        let saved = ''; try { saved = sessionStorage.getItem('fp26name') || '' } catch (e) { }
+        let saved = ''; try { saved = sessionStorage.getItem('fp26cs') || '' } catch (e) { }
         if (saved) $('nm').value = saved;
-        // voice (free built-in browser voice; picks the most natural one the phone has)
         const hasTTS = 'speechSynthesis' in window;
         function pickVoice() {
             const vs = speechSynthesis.getVoices(); if (!vs.length) return null;
@@ -670,36 +1217,51 @@
         }
         if (hasTTS) { speechSynthesis.getVoices(); speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices() }
         let spoke = false;
-        function speak(text, onend) {
-            let done = false; const fin = () => { if (!done) { done = true; onend && onend() } };
-            if (!hasTTS) { fin(); return }
-            try {
-                const u = new SpeechSynthesisUtterance(text), v = pickVoice(); if (v) { u.voice = v; u.lang = v.lang } else u.lang = 'en-IN'; u.rate = .95; u.pitch = 1.08; u.volume = 1;
-                u.onstart = () => { spoke = true }; u.onend = fin; u.onerror = fin; speechSynthesis.cancel(); speechSynthesis.speak(u)
-            } catch (e) { fin() }
+        function speak(t) { if (!hasTTS) return; try { const u = new SpeechSynthesisUtterance(t), v = pickVoice(); if (v) { u.voice = v; u.lang = v.lang } else u.lang = 'en-IN'; u.rate = .95; u.pitch = 1.1; u.volume = 1; u.onstart = () => { spoke = true }; speechSynthesis.cancel(); speechSynthesis.resume(); speechSynthesis.speak(u) } catch (e) { } }
+        // ---- code shown on the computer: Python, Java, HTML, CSS, JavaScript ----
+        const K = t => `<span class="k">${t}</span>`, F = t => `<span class="f">${t}</span>`, S = t => `<span class="s">${t}</span>`;
+        const SN = [[K('from') + ' college ' + K('import') + ' Freshers', K('class') + ' ' + F('Invitation') + ':', '    ' + K('def') + ' ' + F('open') + '(self, guest):', '        ' + K('print') + '(' + S('"Hi"') + ', guest)'],
+        [K('public class') + ' ' + F('Main') + ' {', '  ' + K('public static void') + ' ' + F('main') + '() {', '    System.out.println(' + S('"Hi!"') + ');', '  }'],
+        ['&lt;' + K('h1') + '&gt;Freshers Party 2026&lt;/' + K('h1') + '&gt;', '&lt;' + K('p') + ' ' + F('id') + '=' + S('"guest"') + '&gt;&lt;/' + K('p') + '&gt;', '&lt;' + K('script') + ' ' + F('src') + '=' + S('"app.js"') + '&gt;&lt;/' + K('script') + '&gt;'],
+        [F('.guest') + ' {', '  color: ' + S('#4aa3e8') + ';', '  font-size: ' + S('28px') + ';', '}'],
+        [K('const') + ' guest = ' + S('"Freshers"') + ';', 'document.' + F('getElementById') + '(' + S('"guest"') + ')', '  .textContent = guest;']];
+        function snip(i) { $('edc').innerHTML = SN[i].map((l, k) => `<div style="--i:${k}">${l}</div>`).join(''); for (let j = 0; j < 5; j++)$('tab' + j).classList.toggle('on', j === i) }
+        // ---- the film (about 10.5 s) ----
+        const at = (ms, fn) => setTimeout(fn, ms);
+        function startFilm(name, line) {
+            document.body.classList.add('lock'); const film = $('film'); film.classList.remove('hid');
+            const vw = innerWidth, vh = innerHeight, u = Math.min(vw / 400, vh / 600), lab = $('lab'), svgScr = 120 * u, lw = $('lapw'), scr = $('scr');
+            lw.style.marginTop = '0px'; let r = scr.getBoundingClientRect(); lw.style.marginTop = (vh / 2 - (r.top + r.height / 2)) + 'px'; r = scr.getBoundingClientRect();
+            const S1 = r.width / svgScr, S2 = vw / r.width * 1.04;
+            $('cam').animate([{ transform: 'translate(0,0) scale(1)', offset: 0 }, { transform: 'translate(0,-6px) scale(1.07)', offset: .52 }, { transform: `translate(0,-136.5px) scale(${S1})`, offset: 1 }], { duration: 4600, easing: 'cubic-bezier(.5,0,.3,1)', fill: 'forwards' });
+            try { lab.pauseAnimations(); lab.setCurrentTime(0); lab.unpauseAnimations(); document.getElementById('dofA').beginElementAt(2.4) } catch (e) { }
+            at(4300, () => lw.classList.add('on')); at(4700, () => lab.classList.add('off'));
+            at(5000, () => $('boot').classList.add('on'));
+            at(6300, () => { $('boot').classList.remove('on'); $('desk').classList.add('on') });
+            [6350, 6750, 7150, 7550, 7950].forEach((t, i) => at(t, () => snip(i)));
+            at(7000, () => { let i = 0; const tn = $('tyn'), iv = setInterval(() => { tn.textContent = name.slice(0, ++i); if (i >= name.length) { clearInterval(iv); tn.insertAdjacentText('afterend', '"') } }, 60) });
+            at(7000 + name.length * 60 + 300, () => { $('tyo').textContent = '✓ loading invitation…' });
+            at(8300, () => { $('m2').textContent = 'Dear ' + name + ','; $('mini').classList.add('on'); $('desk').classList.remove('on'); $('cap').textContent = line; $('cap').classList.add('on'); speak(line) }); // invitation starts appearing on the computer: voice begins
+            at(8900, () => { const lr = lw.getBoundingClientRect(); lw.style.transformOrigin = '50% ' + ((vh / 2 - lr.top) / lr.height * 100) + '%'; lw.animate([{ transform: 'translate(-50%,-50%) scale(1)' }, { transform: `translate(-50%,-50%) scale(${S2})` }], { duration: 1700, easing: 'cubic-bezier(.55,0,.25,1)', fill: 'forwards' }) });
+            at(10300, showCard); at(11300, () => film.classList.add('hid')); at(10900, () => $('cap').classList.remove('on'));
+            at(12500, () => { if (hasTTS && !spoke) { const again = () => { document.removeEventListener('pointerdown', again); $('cap').classList.add('on'); setTimeout(() => $('cap').classList.remove('on'), 6500); speak(line) }; document.addEventListener('pointerdown', again) } })
         }
-        // flow
-        let name = '', opened = false;
         function showCard() {
-            if ($('card').classList.contains('on')) return; $('cap').classList.add('off'); $('bg').classList.add('soft'); $('inv').classList.remove('hid');
+            if ($('card').classList.contains('on')) return; fillVis(); $('inv').classList.remove('hid'); $('film').classList.add('fade');
             requestAnimationFrame(() => { $('card').classList.add('on'); document.body.classList.remove('lock'); scrollTo(0, 0) })
         }
+        let opened = false;
         function openInv() {
-            if (opened) return; const fld = $('fld'); name = clean($('nm').value);
-            if (!name) { fld.classList.remove('err'); void fld.offsetWidth; fld.classList.add('err'); $('nm').focus(); return }
-            opened = true; try { sessionStorage.setItem('fp26name', name) } catch (e) { }
-            $('n1').textContent = name; document.title = 'Invitation for ' + name + ' – Freshers Party 2026';
-            const cap = $('cap'); cap.textContent = 'Hi ' + name + '!'; const sm = document.createElement('small'); sm.textContent = 'YOU ARE INVITED'; cap.appendChild(sm);
-            if (hasTTS) { try { const p = new SpeechSynthesisUtterance(' '); p.volume = 0; speechSynthesis.speak(p) } catch (e) { } }  // unlocks audio on iPhone from the tap
+            if (opened) return; const name = clean($('nm').value);
+            if (!name) { const f = $('fld'); f.classList.remove('err'); void f.offsetWidth; f.classList.add('err'); $('nm').focus(); return }
+            opened = true; try { sessionStorage.setItem('fp26cs', name) } catch (e) { }
+            $('who').textContent = name; document.title = 'Invitation for ' + name + ' – Freshers Party 2026';
+            if (hasTTS) { try { const p = new SpeechSynthesisUtterance(' '); p.volume = 0; speechSynthesis.speak(p) } catch (e) { } } // the OPEN INVITATION tap unlocks audio (iPhone/Android)
             $('nm').blur(); $('wel').classList.add('out');
-            fillScene($('bg')); fillScene($('pb')); $('bg').classList.remove('hid');
-            setTimeout(() => { $('wel').classList.add('hid'); $('bg').classList.add('on'); setTimeout(() => cap.classList.add('on'), 500) }, 800);
             const line = 'Hi ' + name + ', you are invited to the Computer Science Group Freshers Party 2026.';
-            setTimeout(() => speak(line, () => setTimeout(showCard, 900)), 1500);
-            setTimeout(() => { if (hasTTS && !spoke) { const again = () => { document.removeEventListener('pointerdown', again); speak(line) }; document.addEventListener('pointerdown', again) } }, 4200); // if the phone blocked the voice, the next tap plays it
-            setTimeout(showCard, hasTTS ? 10500 : 4500)
+            at(800, () => { $('wel').classList.add('hid'); startFilm(name, line) })
         }
-        $("go").onclick = openInv; $('nm').addEventListener('keydown', e => { if (e.key === "Enter") openInv() });
+        $('go').onclick = openInv; $('nm').addEventListener('keydown', e => { if (e.key === 'Enter') openInv() });
     </script>
 </body>
 
